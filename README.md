@@ -6,11 +6,16 @@ Script to install nginx, php on ubuntu
 ubuntu 20.04
 ```
 
-### Installation
+### Installation (Option 1)
 ```bash
 cd /tmp
 git clone https://github.com/PyaeSoneAungRgn/unp
 cd unp
 chmod +x install.sh
 ./install.sh
+```
+
+### Installation (Option 2)
+```bash
+wget -O install.sh https://pyaesoneaung.tech/api/unp && chmod +x install.sh && ./install.sh && rm install.sh
 ```
