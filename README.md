@@ -1,9 +1,12 @@
-## ubuntu + nginx + php(7.4)
+## ubuntu + nginx + php
 Script to install nginx, php on ubuntu
-
-### Other Softwares
-- nodejs
-- composer
+| Name | Version |
+| ----------- | ----------- |
+| nginx | ^1.18 |
+| php | ^7.4 |
+| composer | ^2.0 |
+| node | ^14.15 |
+| npm | ^6.14 |
 
 ### Requirement
 ```
