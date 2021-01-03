@@ -1,5 +1,4 @@
-## ubuntu + nginx + php
-Script to install nginx, php on ubuntu
+## Script to install nginx and php on ubuntu
 | Name | Version |
 | ----------- | ----------- |
 | nginx | ^1.18 |
