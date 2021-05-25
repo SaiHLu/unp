@@ -1,11 +1,9 @@
 ## Script to install nginx and php on ubuntu
 | Name | Version |
 | ----------- | ----------- |
-| nginx | >=1.18 |
-| php | >=8.0 |
-| composer | >=2.0 |
-| node | >=14.15 |
-| npm | >=6.14 |
+| nginx | ^1.18 |
+| php | ^8.0 |
+| composer | ^2.0 |
 
 ### Requirement
 ```
