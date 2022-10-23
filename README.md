@@ -2,7 +2,7 @@
 | Name | Version |
 | ----------- | ----------- |
 | nginx | ^1.18 |
-| php | ^8.0 |
+| php | ^8.1 |
 | composer | ^2.0 |
 
 ### Requirement
