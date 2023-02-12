@@ -7,7 +7,7 @@
 
 ### Requirement
 ```
-ubuntu 20.04
+ubuntu >= 20.04
 ```
 
 ### Installation (Option 1)
