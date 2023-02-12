@@ -5,7 +5,7 @@ apt -y install nginx
 apt -y install software-properties-common
 add-apt-repository -y ppa:ondrej/php
 apt -y install php8.1-fpm
-apt -y install php8.1-common php8.1-bcmath php8.1-mbstring php8.1-mysql php8.1-xml php8.1-zip php8.1-curl
+apt -y install php8.1-common php8.1-bcmath php8.1-mbstring php8.1-mysql php8.1-xml php8.1-zip php8.1-curl php8.1-gd
 cd ~
 curl -sS https://getcomposer.org/installer -o composer-setup.php
 HASH=`curl -sS https://composer.github.io/installer.sig`
