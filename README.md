@@ -15,15 +15,26 @@
 ubuntu >= 22.04
 ```
 
-### Installation (Option 1)
+### Installation
 ```bash
 bash <(curl -s https://raw.githubusercontent.com/PyaeSoneAungRgn/unp/main/install.sh)
 ```
 
-### Installation (Option 2)
+### Optional
+
+#### Generate ssh key
+
 ```bash
-git clone https://github.com/PyaeSoneAungRgn/unp
-cd unp
-chmod +x install.sh
-./install.sh
+ssh-keygen -f ~/.ssh/id_rsa -t rsa -N ''
+```
+
+
+#### Update root password
+
+```bash
+sudo mysql
+```
+
+```sql
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
 ```
