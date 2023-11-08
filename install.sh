@@ -5,14 +5,14 @@ export DEBIAN_FRONTEND=noninteractive
 apt -y update
 apt -y upgrade
 
-apt -y install ca-certificates curl gnupg
+apt -y install ca-certificates curl gnupg zip unzip
 
 apt -y install nginx
 
 apt -y install software-properties-common
 add-apt-repository -y ppa:ondrej/php
 apt -y install php8.2-fpm
-apt -y install php8.2-common php8.2-bcmath php8.2-mbstring php8.2-mysql php8.2-xml php8.2-zip php8.2-curl php8.2-gd
+apt -y install php8.2-common php8.2-bcmath php8.2-mbstring php8.2-mysql php8.2-xml php8.2-zip php8.2-curl php8.2-gd php8.1-redis
 
 cd ~
 curl -sS https://getcomposer.org/installer -o composer-setup.php
@@ -30,5 +30,9 @@ NODE_MAJOR=20
 echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
 apt -y update
 apt -y install nodejs
+
+apt -y install redis-server
+sed -i '/^supervised no/ s/supervised no/supervised systemd/' /etc/redis/redis.conf
+systemctl restart redis.service
 
 unset DEBIAN_FRONTEND
