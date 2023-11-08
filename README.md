@@ -44,3 +44,11 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password
 sudo chgrp -R www-data storage bootstrap/cache
 sudo chmod -R ug+rwx storage bootstrap/cache
 ```
+
+#### OPCache
+
+```txt
+opcache.enable=1
+opcache.validate_timestamps=0
+opcache.save_comments=0
+```
