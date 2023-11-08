@@ -5,8 +5,9 @@
 | php | ^8.2 |
 | nginx | latest |
 | composer | latest |
-| MySQL | latest |
 | nodejs | latest |
+| MySQL | latest |
+| redis | latest |
 
 
 ### Requirement
