@@ -1,7 +1,8 @@
 #!/bin/bash
 
-sed -i 's/#$nrconf{kernelhints} = -1;/$nrconf{kernelhints} = 0;/' /etc/needrestart/needrestart.conf
-sed -i 's/#$nrconf{restart} = \x27i\x27;/$nrconf{restart} = \x27l\x27;/' /etc/needrestart/needrestart.conf
+export DEBIAN_FRONTEND=noninteractive
+#sed -i 's/#$nrconf{kernelhints} = -1;/$nrconf{kernelhints} = 0;/' /etc/needrestart/needrestart.conf
+#sed -i 's/#$nrconf{restart} = \x27i\x27;/$nrconf{restart} = \x27l\x27;/' /etc/needrestart/needrestart.conf
 
 apt -y update
 apt -y upgrade
@@ -32,5 +33,5 @@ echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.co
 apt -y update
 apt -y nodejs
 
-sed -i 's/$nrconf{kernelhints} = 0;/#$nrconf{kernelhints} = -1;/' /etc/needrestart/needrestart.conf
-sed -i 's/$nrconf{restart} = \x27l\x27;/#$nrconf{restart} = \x27i\x27;/' /etc/needrestart/needrestart.conf
+#sed -i 's/$nrconf{kernelhints} = 0;/#$nrconf{kernelhints} = -1;/' /etc/needrestart/needrestart.conf
+#sed -i 's/$nrconf{restart} = \x27l\x27;/#$nrconf{restart} = \x27i\x27;/' /etc/needrestart/needrestart.conf
