@@ -1,13 +1,17 @@
 ## Script to install nginx and php on ubuntu
+
 | Name | Version |
 | ----------- | ----------- |
-| nginx | ^1.18 |
-| php | ^8.1 |
-| composer | ^2.0 |
+| php | ^8.2 |
+| nginx | latest |
+| composer | latest |
+| MySQL | latest |
+| nodejs | latest |
+
 
 ### Requirement
 ```
-ubuntu >= 20.04
+ubuntu >= 22.04
 ```
 
 ### Installation (Option 1)
