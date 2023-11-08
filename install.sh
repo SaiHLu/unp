@@ -1,9 +1,12 @@
 #!/bin/bash
 
-apt -y update
-apt upgrade --assume-yes
+sed -i 's/#$nrconf{kernelhints} = -1;/$nrconf{kernelhints} = 0;/' /etc/needrestart/needrestart.conf
+sed -i 's/#$nrconf{restart} = \x27i\x27;/$nrconf{restart} = \x27l\x27;/' /etc/needrestart/needrestart.conf
 
-apt -y install curl
+apt -y update
+apt -y upgrade
+
+apt -y install ca-certificates curl gnupg
 
 apt -y install nginx
 
@@ -22,8 +25,12 @@ cd -
 apt -y install mysql-server
 systemctl start mysql.service
 
-cd ~
-curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
-apt -y install nodejs
-cd -
+mkdir -p /etc/apt/keyrings
+curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+NODE_MAJOR=20
+echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
+apt -y update
+apt -y nodejs
 
+sed -i 's/$nrconf{kernelhints} = 0;/#$nrconf{kernelhints} = -1;/' /etc/needrestart/needrestart.conf
+sed -i 's/$nrconf{restart} = \x27l\x27;/#$nrconf{restart} = \x27i\x27;/' /etc/needrestart/needrestart.conf
