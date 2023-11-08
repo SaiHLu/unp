@@ -28,7 +28,6 @@ bash <(curl -s https://raw.githubusercontent.com/PyaeSoneAungRgn/unp/main/instal
 ssh-keygen -f ~/.ssh/id_rsa -t rsa -N ''
 ```
 
-
 #### Update root password
 
 ```bash
@@ -37,4 +36,11 @@ sudo mysql
 
 ```sql
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+```
+
+#### Laravel folder permission
+
+```bash
+sudo chgrp -R www-data storage bootstrap/cache
+sudo chmod -R ug+rwx storage bootstrap/cache
 ```
