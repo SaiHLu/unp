@@ -12,7 +12,7 @@
 
 ### Requirement
 ```
-ubuntu >= 22.04
+ubuntu >= 24.04
 ```
 
 ### Installation
