@@ -2,7 +2,7 @@
 
 | Name | Version |
 | ----------- | ----------- |
-| php | ^8.3 |
+| php | ^8.4 |
 | nginx | latest |
 | composer | latest |
 | nodejs | latest |
