@@ -46,9 +46,13 @@ sudo chmod -R ug+rwx storage bootstrap/cache
 ```
 
 #### OPCache
-
+Edit php-fpm/php.ini
 ```txt
 opcache.enable=1
 opcache.validate_timestamps=0
 opcache.save_comments=0
+```
+```bash
+sudo systemctl list-units --type=service | grep -i php # list the services
+sudo systemctl restart php8.4-fpm.service # restart the service
 ```
