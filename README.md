@@ -52,6 +52,31 @@ opcache.enable=1
 opcache.validate_timestamps=0
 opcache.save_comments=0
 ```
+
+#### Setup Supervisor
+```bash
+sudo apt-get install supervisor
+cd /etc/supervisor/conf.d
+vim laravel-queue.conf (can be any name with .conf extension)
+sudo supervisorctl reread
+sudo supervisorctl update
+sudo supervisorctl start laravel-queue:*
+```
+
+##### Example Queue Configuration
+```txt
+[program:laravel-queue]
+process_name=%(program_name)s_%(process_num)02d
+command=php /var/www/laravel-project/artisan queue:work redis --sleep=3 --tries=3 # 'redis', 'database', 'sqs'
+autostart=true
+autorestart=true
+user=root #your system user
+numprocs=2
+redirect_stderr=true
+stdout_logfile=/var/www/laravel-project/worker.log
+stopwaitsecs=3600
+```
+
 ```bash
 sudo systemctl list-units --type=service | grep -i php # list the services
 sudo systemctl restart php8.4-fpm.service # restart the service
